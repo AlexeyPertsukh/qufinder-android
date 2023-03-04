@@ -11,10 +11,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
 
+import com.explodeman.qufinder.adapter.ItemAdapter;
 import com.explodeman.qufinder.model.Item;
 import com.explodeman.qufinder.model.content_parser.ContentParser;
 import com.explodeman.qufinder.model.content_parser.CsvContentParser;
 import com.explodeman.qufinder.model.file_reader.FileReader;
+import com.explodeman.qufinder.model.file_reader.FileReaderBuffered;
 import com.explodeman.qufinder.model.item_repository.ItemRepository;
 import com.explodeman.qufinder.model.item_repository.item_file_repository.ItemFileRepository;
 
@@ -24,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int MIN_SIZE_FOUND = 3;
+    private static final int MIN_SYMBOLS_FOUND = 3;
     private static final String CSV_FILE_NAME = "items.csv";
 
     private SearchView searchView;
@@ -82,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String s) {
 
-                if (s.length() < MIN_SIZE_FOUND) {
+                if (s.length() < MIN_SYMBOLS_FOUND) {
                     ItemAdapter adapter = createItemsAdapter(new ArrayList<>());
                     setAdapter(adapter);
                     return false;

@@ -1,6 +1,4 @@
-package com.explodeman.qufinder;
-
-import com.explodeman.qufinder.model.file_reader.FileReader;
+package com.explodeman.qufinder.model.file_reader;
 
 import java.io.BufferedReader;
 import java.io.IOException;

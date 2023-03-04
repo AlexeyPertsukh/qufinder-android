@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class FileReaderImp implements FileReader {
+public class FileReaderBasic implements FileReader {
   private final String fileName;
 
-  public FileReaderImp(String fileName) {
+  public FileReaderBasic(String fileName) {
     this.fileName = fileName;
   }
 

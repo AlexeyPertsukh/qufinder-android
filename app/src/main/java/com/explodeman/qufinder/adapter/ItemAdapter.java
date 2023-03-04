@@ -1,4 +1,4 @@
-package com.explodeman.qufinder;
+package com.explodeman.qufinder.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.explodeman.qufinder.R;
 import com.explodeman.qufinder.model.Item;
 
 import java.util.List;
