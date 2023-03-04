@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -67,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         MenuItem menuItem = menu.findItem(R.id.menu_castles_search);
         searchView = (SearchView) menuItem.getActionView();
         searchView.setOnCloseListener(this::onCloseSearch);
+        searchView.setBackgroundColor(Color.parseColor("#0040FF"));
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
