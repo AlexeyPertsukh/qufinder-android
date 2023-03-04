@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_marginBottom="12sp"
     >
 
     <TextView
@@ -19,5 +18,13 @@
         style="@style/StyleTextAnswer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="answer" />
+        android:hint="answer"
+        android:layout_marginBottom="12sp"
+        />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider" />
 </LinearLayout>

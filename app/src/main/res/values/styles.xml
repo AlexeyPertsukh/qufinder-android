@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="Theme.MyTheme"
+        parent="Theme.QuFinder">
+        <!-- other styles -->
+    </style>
+
+    <style name="MyActionButton" parent="@android:style/Widget.ActionButton">
+
+    </style>
 
     <style name="StyleText">
         <item name="android:textSize">18sp</item>

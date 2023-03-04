@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingRight="48sp"
+    android:paddingEnd="44dp"
+    >
+    <item>
+        <bitmap android:src="@android:drawable/ic_btn_speak_now" />
+    </item>
+</layer-list>

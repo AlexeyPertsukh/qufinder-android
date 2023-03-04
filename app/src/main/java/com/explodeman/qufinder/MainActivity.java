@@ -1,10 +1,11 @@
 package com.explodeman.qufinder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,7 +15,6 @@ import com.explodeman.qufinder.model.Item;
 import com.explodeman.qufinder.model.content_parser.ContentParser;
 import com.explodeman.qufinder.model.content_parser.CsvContentParser;
 import com.explodeman.qufinder.model.file_reader.FileReader;
-import com.explodeman.qufinder.model.file_reader.FileReaderImp;
 import com.explodeman.qufinder.model.item_repository.ItemRepository;
 import com.explodeman.qufinder.model.item_repository.item_file_repository.ItemFileRepository;
 
@@ -65,10 +65,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
-        MenuItem menuItem = menu.findItem(R.id.menu_castles_search);
+        MenuItem menuItem = menu.findItem(R.id.menu_search);
         searchView = (SearchView) menuItem.getActionView();
         searchView.setOnCloseListener(this::onCloseSearch);
-        searchView.setBackgroundColor(Color.parseColor("#0040FF"));
+//        searchView.setBackgroundColor(Color.parseColor("#0040FF"));
+
+        Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.draw_search);
+        searchView.setBackground(drawable);
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
