@@ -22,7 +22,7 @@ public class FileReaderBasic implements FileReader {
       }
       fr.close();
     } catch (IOException ex) {
-      throw new IllegalArgumentException("filed read file: " + fileName);
+      throw new IllegalArgumentException("read file error: " + fileName);
     }
 
     return strings;

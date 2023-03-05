@@ -29,8 +29,6 @@ public class MainActivity extends AppCompatActivity {
     private static final int MIN_SYMBOLS_FOUND = 3;
     private static final String CSV_FILE_NAME = "items.csv";
 
-    private SearchView searchView;
-
     private ItemRepository repository;
 
     private RecyclerView rvItems;
@@ -68,8 +66,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         MenuItem menuItem = menu.findItem(R.id.menu_search);
-        searchView = (SearchView) menuItem.getActionView();
-        searchView.setOnCloseListener(this::onCloseSearch);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setOnCloseListener(this::onSearchClose);
 //        searchView.setBackgroundColor(Color.parseColor("#0040FF"));
 
         Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.draw_search);
@@ -102,15 +100,15 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    private boolean onCloseSearch() {
+    private boolean onSearchClose() {
         return false;
     }
 
     private ItemRepository createRepository() {
         //return new ItemMemoryRepository();
 
-        String fileName = CSV_FILE_NAME;
-        InputStream stream = null;
+        final String fileName = CSV_FILE_NAME;
+        InputStream stream;
         try {
             stream = getAssets().open(fileName);
         } catch (IOException e) {
